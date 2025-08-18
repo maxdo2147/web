@@ -1,100 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant" data-bs-theme="dark">
 <head>
-
-
-
-
-
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中正資研 官方網頁</title>
     
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="style.css">
-<!-- icon -->
-<link rel="icon" href="https://cdn.discordapp.com/attachments/984715679682949130/1011856683405946890/home.png">
-
-<meta charset="utf-8">
-<title>中正資研 官方網頁</title>
-<br>
-<script>
-// 上滑
-
-    $(function(){
-        $('#BackTop').click(function(){ 
-            $('html,body').animate({scrollTop:0}, 333);
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/984715679682949130/1011856683405946890/home.png">
+    
+    <!-- JQuery (needed for the Back to Top script) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Back to Top button script
+        $(function(){
+            $('#BackTop').click(function(){ 
+                $('html,body').animate({scrollTop:0}, 333);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 100 ){ // Show button after scrolling 100px
+                    $('#BackTop').fadeIn(222);
+                } else {
+                    $('#BackTop').stop().fadeOut(222);
+                }
+            }).scroll();
         });
-        $(window).scroll(function() {
-            if ( $(this).scrollTop() > 1 ){
-                $('#BackTop').fadeIn(222);
-            } else {
-                $('#BackTop').stop().fadeOut(222);
-            }
-        }).scroll();
-    });
-// 開啟收回
-$(document).ready(function(){$("#oabout").click(function(){$("#about").slideDown("slow")})})
-$(document).ready(function(){$("#cabout").click(function(){$("#about").slideUp("slow")})})
-$(document).ready(function(){$("#ohistory").click(function(){$("#history").slideDown("slow")})})
-$(document).ready(function(){$("#chistory").click(function(){$("#history").slideUp("slow")})})
-$(document).ready(function(){$("#ocode").click(function(){$("#code").slideDown("slow")})})
-$(document).ready(function(){$("#ccode").click(function(){$("#code").slideUp("slow")})})
-$(document).ready(function(){$("#ocon").click(function(){$("#con").slideDown("slow")})})
-$(document).ready(function(){$("#ccon").click(function(){$("#con").slideUp("slow")})})
-$(document).ready(function(){$("#olist").click(function(){$("#list").slideDown("slow")})})
-$(document).ready(function(){$("#clist").click(function(){$("#list").slideUp("slow")})})
-// 顏色
-
-</script>
-
+    </script>
 </head>
 <body>
-<div class="in">
-<!-- 上面的東西 -->
-<div class="title" style="background-color: springgreen;";>
-<p>台北市立中正高中 資訊研究社</p>
-</div>
-<!-- 上面的東西 結束 -->
-<button class="b" id="oabout">關於我們</button><br>
-<div class="inside" id="about">由一群喜歡程式的同學建立<br>這裡非常自由，基本上不要缺席被記曠課就好<br>
-<button id="cabout">關閉</button><br>
-</div>
-<br>
-<button class="b" id="ocon">預計教學</button><br>
-<div class="inside" id="con">Github 使用<br>基本前端網頁(包含html js css)<br>APCS程式(Python C++)<br>節日特殊課程aua<br>
-<button id="ccon">關閉</button><br>
-</div>
-<br>
-<button class="b" id="ocode">會的語言</button><br>
-<div class="inside" id="code">中文<br>ENGLISH<br>C++<br>php<br>html<br>js(jquery)<br>css<br>sql<br>C#<br>python<br>
-<button id="ccode">關閉</button><br>
+
+<div class="container my-5">
+    <!-- Header with animation class -->
+    <header class="p-5 mb-4 bg-body-tertiary rounded-3 text-center fade-in-up">
+        <h1 class="display-4">台北市立中正高中 資訊研究社</h1>
+        <p class="lead">由一群熱愛程式的同學建立的自由社團。</p>
+    </header>
+
+    <!-- Main Content Accordion with animation class -->
+    <div class="accordion fade-in-up" id="mainAccordion">
+
+        <!-- About Us -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    關於我們
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#mainAccordion">
+                <div class="accordion-body">
+                    由一群喜歡程式的同學建立。這裡非常自由，基本上不要缺席被記曠課就好。
+                </div>
+            </div>
+        </div>
+
+        <!-- Planned Teaching -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    預計教學
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#mainAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Github 使用</li>
+                        <li class="list-group-item">基本前端網頁 (HTML, JS, CSS)</li>
+                        <li class="list-group-item">APCS程式 (Python, C++)</li>
+                        <li class="list-group-item">節日特殊課程</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Known Languages -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    會的語言
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#mainAccordion">
+                <div class="accordion-body">
+                    中文, ENGLISH, C++, PHP, HTML, JS (jQuery), CSS, SQL, C#, Python
+                </div>
+            </div>
+        </div>
+        
+        <!-- Team List -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    團隊列表
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#mainAccordion">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            鍾佳佑
+                            <span class="badge bg-primary rounded-pill">社長、公關</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            邱靖舜
+                            <span class="badge bg-primary rounded-pill">副社、網管</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            彭子衡
+                            <span class="badge bg-primary rounded-pill">駭客、文書</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            鮑浩嘉
+                            <span class="badge bg-primary rounded-pill">總務</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            張弘易
+                            <span class="badge bg-primary rounded-pill">美編</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Accounts -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    社群帳號
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#mainAccordion">
+                <div class="accordion-body">
+                    <div class="d-grid gap-2">
+                        <a href="https://instagram.com/zzis_111" class="btn btn-outline-light">Instagram: zzis_111</a>
+                        <a href="https://discord.gg/kfxtBCCw7G" class="btn btn-outline-light">Discord</a>
+                        <a href="https://line.me/R/ti/g/umsyHKphQU" class="btn btn-outline-light">LINE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-body-secondary mt-5 py-4 border-top">
+        中正資研官方網頁<br>
+        2022/07開始架設<br>
+        於 Github Pages 架設<br>
+        © 2022 台北市立中正高中
+    </footer>
 </div>
 
-<br>
-<button class="b" id="olist">團隊列表</button><br>
-<div class="inside" id="list">
-<h4>社長、公關 - 鍾佳佑</h4>
-<h4>副社、網管 - 邱靖舜</h4>
-<h4>駭客、文書 - 彭子衡</h4>
-<h4>總務 - 鮑浩嘉</h4>
-<h4>美編 - 張弘易</h4>
-<br>
-<button id="clist">關閉</button><br>
-<br>
-</div>
-<br>
-<button class="b" id="ohistory">社群帳號</button><br>
-<div class="inside" id="history"><a href="https://instagram.com/zzis_111">IG:zzis_111</a><br><a href="https://discord.gg/kfxtBCCw7G">Discord</a><br><a href="https://line.me/R/ti/g/umsyHKphQU">LINE</a><br>
-<button id="chistory">關閉</button>
-</div>
-<br>
-<!-- 下方的東西 -->
-
+<!-- Back to top button -->
 <button type="button" id="BackTop" class="toTop-arrow"></button>
-<div class="down">
-中正資研官方網頁<br>2022/07開始架設<br>於github page架設<br>© 2022 台北市立中正高中<br>
 
-<!-- 下方的東西 結束 -->
-</div>
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Entry Animation Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.fade-in-up');
+
+        animatedElements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('is-visible');
+            }, (index * 200) + 100); // Stagger the animation
+        });
+    });
+</script>
+
 </body>
 </html>
